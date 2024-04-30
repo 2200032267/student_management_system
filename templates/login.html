@@ -1,0 +1,95 @@
+
+ {% extends 'index.html' %}
+
+ {% block 'body' %}
+
+ <h2 align="center" style="color:red">{{message}}</h2>
+
+
+<p>i am in login page</p>>
+
+ <h3 align="center"><u>Admin login</u></h3>
+
+ <br>
+
+
+<center>
+
+
+     <form method="post" action="/checkadminlogin">
+    {% csrf_token %}
+
+         <table align="center" width="25%" height="25">
+   <tr>
+    <td>
+        <br>
+     <lable>Enter username</lable>
+    </td>
+  <td>
+      <br>
+    <input type="text" name="uname" placeholder="Username">
+        </td>
+  </tr>
+
+      <tr>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+      </tr>
+
+        <tr>
+    <td>
+        <br>
+     <lable>Enter password</lable>
+    </td>
+  <td>
+      <br>
+    <input type="password" name="pwd" placeholder="Password">
+         </td>
+
+      <tr>
+          <td></td>
+      </tr>
+
+      <tr>
+          <td></td>
+      </tr>
+<table align="center">
+ <tr align="center">
+
+     <td>
+         <br>
+    <button type="submit">Login</button>
+        </td>
+          </tr>
+
+              <tr>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+      </tr>
+
+             <tr align="center">
+     <td>
+         <br>
+     <input type="reset" value="Clear">
+        </td>
+          </tr>
+
+              <tr>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+      </tr>
+</table>
+
+</form>
+
+  </table>
+ </form>
+    </center>
+
+{% endblock %}

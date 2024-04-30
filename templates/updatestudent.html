@@ -1,0 +1,72 @@
+ {% extends 'adminhome.html' %}
+
+ {% block 'body' %}
+
+
+<h3 align="center"><u>update Student</u></h3><br>
+
+ <h4>
+ Total Student = {{count}}
+ </h4>
+  <input class="form-control" id="myInput" type="text" placeholder="search by any column Name"><br>
+
+ <table align="center" border="2" width="50%" height="50%" class="table table-bordered table-stripped">
+     <thead>
+     <tr bgcolor="lightblue" align="center">
+         <td>Studentid</td>
+         <td>Fullname</td>
+         <td>Gender</td>
+         <td>Department</td>
+         <td>Program</td>
+         <td>Semester</td>
+         <td>Year</td>
+         <td>Password</td>
+         <td>Email</td>
+         <td>Contact</td>
+         <td>Action</td>
+
+         <td>
+             <a href="/studentupdation/{{student.id}}" class="addbutton">update</a>
+         </td>
+
+
+     </tr>
+     </thead>
+     <tbody id="myTable">
+     {% for student in studentdata %}
+
+     <tr align ="center">
+           <td>{{student.Studentid}}</td>
+           <td>{{student.Fullname}}</td>
+           <td>{{student.Gender}}</td>
+           <td>{{student.Department}}</td>
+           <td>{{student.Program}}</td>
+           <td>{{student.Semester}}</td>
+           <td>{{student.Password}}</td>
+           <td>{{student.Year}}</td>
+           <td>{{student.Email}}</td>
+           <td>{{student.Contact}}</td>
+
+
+     </tr>
+
+     {% endfor %}
+ </tbody>
+     </table>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+</body>
+</html>
+
+
+{% endblock %}

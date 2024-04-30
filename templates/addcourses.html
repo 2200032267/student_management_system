@@ -1,0 +1,99 @@
+{% extends 'adminhome.html' %}
+
+{% block 'body' %}
+
+
+<h2 align="center" style="color:red">{{msg}}</h2>
+<h3 align="center"><u>Add Course</u></h3>
+
+<form align="center" method="post" action="{% url 'insertcourse' %}">
+    {% csrf_token %}
+    <table align="center" width="60%" height="60%">
+        <tr>
+            <td align="right" style="padding-bottom: 10px;"><label for="dept">Select Department:</label></td>
+            <td align="left">
+                <select name="dept" id="dept" required>
+                    <option value="">--select--</option>
+                    <option value="CSE(H)">CSE(Honors)</option>
+                    <option value="CSE(R)">CSE(Regular)</option>
+                    <option value="CSIT">CS&IT</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right" style="padding-bottom: 10px;"><label for="program">Select Program:</label></td>
+            <td align="left">
+                <select name="program" id="program" required>
+                    <option value="">--select--</option>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="M.Tech">M.Tech</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right" style="padding-bottom: 10px;"><label for="academicYear">Select Academic Year:</label></td>
+            <td align="left">
+                <select name="academicYear" id="academicYear" required>
+                    <option value="">--select--</option>
+                    <option value="2023-24">2023-24</option>
+                    <option value="2022-23">2022-23</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right" style="padding-bottom: 10px;"><label for="semester">Select Semester:</label></td>
+            <td align="left">
+                <select name="semester" id="semester" required>
+                    <option value="">--select--</option>
+                    <option value="ODD">ODD</option>
+                    <option value="EVEN">EVEN</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right" style="padding-bottom: 10px;"><label for="year">Select Enter Year:</label></td>
+            <td align="left">
+                <input type="number" name="year" id="year" min="1" max="4" required>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right" style="padding-bottom: 10px;"><label for="coursecode">Enter Course Code:</label></td>
+            <td align="left">
+                <input type="text" name="coursecode" id="coursecode" required>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right" style="padding-bottom: 10px;"><label for="CourseTitle">Enter Course Title:</label></td>
+            <td align="left">
+                <input type="text" name="CourseTitle" id="CourseTitle" required>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" style="padding-bottom: 10px;"><label for="ltps">Enter LTPS :</label></td>
+            <td align="left">
+                <input type="text" name="ltps" id="ltps" required placeholder="x-x-x-x">
+            </td>
+        </tr>
+        <tr>
+            <td align="right" style="padding-bottom: 10px;"><label for="credits">Enter credits :</label></td>
+            <td align="left">
+                <input type="number" name="credits" id="credits" min="0.0" max="8" required>
+            </td>
+        </tr>
+
+        <tr align="center">
+            <td align="center" colspan="2">
+                <input type="submit" value="Add" class="addbutton">
+                <input type="reset" value="Clear" class="addbutton">
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

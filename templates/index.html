@@ -1,0 +1,61 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMS PROJECT</title>
+    <br>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<h2 align="center">student academic management system</h2>
+
+<nav class="navbar">
+
+    <div class="logo">SMS</div>
+
+    <ul class="nav-links">
+
+        <div class="menu">
+
+<li>   <a href="{% url 'home'  %}">home</a>&nbsp;&nbsp;&nbsp;</li>
+<li>   <a href="{% url 'about'  %}">About Project</a>&nbsp;&nbsp;&nbsp;</li>
+<li class="services">
+
+    <a href="#">login</a>
+
+       <ul class="dropdown">
+            <li><a href="{% url 'studentlogin' %}">Student</a></li>
+            <li><a href="{% url 'facultylogin' %}">Faculty</a></li>
+            <li><a href="{% url 'login' %}">admin</a></li>
+
+          </ul>
+</li>
+
+<li>   <a href="{% url 'contact'  %}">contact us</a>&nbsp;&nbsp;&nbsp;</li>
+
+         </div>
+
+
+</ul>
+</nav>
+<br><br>
+
+{% block 'body' %}
+
+<p>i am in home page</p>
+<br>
+<center>
+<img align="center" width="700" height="300" src="{% static 'images/django.png'%}">
+    </center>
+
+{% endblock %}
+
+</body>
+</html>
